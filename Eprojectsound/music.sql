@@ -5,4 +5,4 @@ create table genre(
 id int primary key auto_increment,
 genre_name varchar(100)
 );
-drop database music;
+

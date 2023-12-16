@@ -3,6 +3,18 @@
 include "header.php";
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Document</title>
+</head>
+<body>
+
+
         <!--**********************************
             Content body start
         ***********************************-->
@@ -579,6 +591,48 @@ include "header.php";
         <!--**********************************
             Content body end
         ***********************************-->
+<script>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery AJAX Example</title>
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<div id="result"></div>
+
+<script>
+
+$(document).ready(function() {
+    // API endpoint URL
+	apiUrl: `https://musicapi13.p.rapidapi.com/public/search/introspection`,
+
+
+    // Make a GET request
+    $.ajax({
+        url: apiUrl,
+        type: 'GET',
+        dataType: 'json',
+        success: function(response) {
+            // Handle the successful response
+            console.log(response);
+
+            // Display the data in the 'result' div
+            $('#result').html('<p>Data from the API: ' + JSON.stringify(response) + '</p>');
+        },
+       
+    });
+});
+</script>
+
+</body>
+</html>
+</script>
+
 
 <?php
 include "footer.php";

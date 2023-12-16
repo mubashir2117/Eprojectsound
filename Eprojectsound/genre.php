@@ -5,7 +5,7 @@ include "header.php";
 <?php
     include("config.php");
    if(isset($_POST['submit'])){
-    $id = $_POST["id"];
+   
     $genre_name = $_POST["genre_name"];
     
     $query = "INSERT INTO `genre`(`genre_name`) VALUES ('$genre_name')";

@@ -22,13 +22,13 @@
     <!--*******************
         Preloader start
     ********************-->
-    <div id="preloader">
+    <!-- <div id="preloader">
         <div class="sk-three-bounce">
             <div class="sk-child sk-bounce1"></div>
             <div class="sk-child sk-bounce2"></div>
             <div class="sk-child sk-bounce3"></div>
         </div>
-    </div>
+    </div> -->
     <!--*******************
         Preloader end
     ********************-->
@@ -188,15 +188,13 @@
                             <li><a href="genrelist.php">Genre List</a></li>
                         </ul>
                     </li>
+                    <li class="nav-label">Edit Artist</li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
-                                class="icon icon-chart-bar-33"></i><span class="nav-text">Charts</span></a>
+                                class="icon icon-app-store"></i><span class="nav-text">Artist</span></a>
                         <ul aria-expanded="false">
-                            <li><a href="./chart-flot.html">Flot</a></li>
-                            <li><a href="./chart-morris.html">Morris</a></li>
-                            <li><a href="./chart-chartjs.html">Chartjs</a></li>
-                            <li><a href="./chart-chartist.html">Chartist</a></li>
-                            <li><a href="./chart-sparkline.html">Sparkline</a></li>
-                            <li><a href="./chart-peity.html">Peity</a></li>
+                            <li><a href="artist.php">Add Artist</a></li>
+                           
+                            <li><a href="artistlist.php">Artist List</a></li>
                         </ul>
                     </li>
                     <li class="nav-label">Components</li>

@@ -37,6 +37,7 @@ include "header.php";
                 <form action="" method="Post">
                     <h1>Edit Artist</h1>
                     <?php
+                    // "SELECT * FROM `artist` inner join genre where genre.id = artist.genre_id";
                     $query = "SELECT * FROM `artist` WHERE Artist_id = $id";
                     $result = mysqli_query($conn, $query);
                     $rows = mysqli_fetch_assoc($result);

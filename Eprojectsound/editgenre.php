@@ -8,11 +8,10 @@ include "header.php";
 
    if(isset($_POST['submit'])){
     $id = $_POST["id"];
-    $genrename = $_POST["genre_name"];
+    $genre_name = $_POST["genre_name"];
     
-    $query = "UPDATE `genre` SET  `genre_name`='$genrename' WHERE id = $id";
-
-    $result = mysqli_query($conn, $query);
+    $query = "UPDATE `genre` SET  `genre_name`='$genre_name' WHERE id = $id";
+  $result = mysqli_query($conn, $query);
 
     if($result){
        echo"update";
@@ -30,7 +29,7 @@ include "header.php";
 
         <div class="row">
             <div class="col-lg-12">
-                <form action="genrelist.php" method="Post">
+                <form action="" method="Post">
                     <h1>Edit Genre</h1>
                     <?php
                     $qry = "SELECT * FROM `genre` WHERE id = $id";
@@ -39,7 +38,7 @@ include "header.php";
                     ?>
         <input value="<?php echo $rows["id"]?>" type="hidden" name="id">
 
-                    <input value="<?php echo $rows['genre_name']?>" type="text" name="genrename"><br><br>
+                    <input value="<?php echo $rows['genre_name']?>" type="text" name="genre_name"><br><br>
                     <button class="btn btn-outline-primary" name="submit">Edit</button>
                     <a href="genrelist.php">Cancel</a>
                 </form>

@@ -197,6 +197,16 @@
                             <li><a href="artistlist.php">Artist List</a></li>
                         </ul>
                     </li>
+                    <li class="nav-label">Edit Song</li>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+                                class="icon icon-app-store"></i><span class="nav-text">Song</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="song.php">Add Song</a></li>
+                           
+                            <li><a href="songlist.php">Song List</a></li>
+                        </ul>
+                    </li>
+                    
                     <li class="nav-label">Components</li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                                 class="icon icon-world-2"></i><span class="nav-text">Bootstrap</span></a>

@@ -14,11 +14,11 @@ include "header.php";
     $genre_id = $_POST["genre_id"];
 
     
-    $query = "UPDATE `artist` SET `artist_name`='$artist_name',`artist_image`='$artist_image',`genre_id`='$genre_id' WHERE Artist_id = $id";
+    $query1 = "UPDATE `artist` SET `artist_name`='$artist_name',`artist_image`='$artist_image',`genre_id`='$genre_id' WHERE `Artist_id` = '$id'";
 
-    $result = mysqli_query($conn, $query);
+    $result1 = mysqli_query($conn, $query1);
 
-    if($result){
+    if($result1){
        echo"update";
     }
     else{
@@ -48,9 +48,19 @@ include "header.php";
                     <input value="<?php echo $rows['artist_image']?>" type="text" name="artist_image"><br><br>
                     <select name="genre_id" id="" class="form-control mt-2">
             <?php
-                while($data = mysqli_fetch_assoc($result)){
-            ?>
-                <option value="<?php echo $data["genre_id"]?>"><?php echo $data["genre_name"]?></option>
+              $qry= "select * from genre";
+              $res= mysqli_query($conn, $qry);
+              
+              while($data = mysqli_fetch_assoc($res)){
+                  if($data['id'] == $rows['genre_id'] ){
+                    $selected= 'selected';
+                  }
+                  else{
+                    $selected= '';
+                  }
+                  ?>
+
+                <option <?php echo $selected ?> value="<?php echo $data["id"]?>"><?php echo $data["genre_name"]?></option>
             <?php
                 }
             ?>

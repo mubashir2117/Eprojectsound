@@ -1,8 +1,8 @@
 
-
 <?php
 include "header.php";
 ?>
+
 <?php
     include("config.php");
    if(isset($_POST['submit'])){
@@ -62,6 +62,15 @@ move_uploaded_file($tempPath, $myPath);
 </div>
 
 
+
+
+
+
+
+
+
+
 <?php
-include "footer.php";
+include 'footer.php';
+
 ?>

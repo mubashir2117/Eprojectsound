@@ -1,3 +1,5 @@
+drop database musics;
+
 create database music;
 
 use music;
@@ -26,4 +28,20 @@ genre_id int,
 Artists_id int,
 FOREIGN KEY (genre_id) REFERENCES genre(id),
 FOREIGN KEY (Artists_id) REFERENCES artist(Artist_id)
+);
+
+
+create table roles(
+	r_id int primary key auto_increment,
+    role_name varchar(50)
+);
+
+create table users(
+	user_id int primary key auto_increment,
+    user_name varchar(20),
+    user_email varchar(200),
+    user_password varchar(200),
+    user_address varchar(500),
+    role_id int,
+    foreign key (role_id) references roles(r_id)
 );

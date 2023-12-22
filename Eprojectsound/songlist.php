@@ -31,7 +31,7 @@ $res1 = mysqli_query($conn,$qry1);
     <div class="container-fluid">
 
         <div class="row">
-            <a class="btn btn-primary btn-sm"  href="song.php" >Add new</a>
+            <a class="btn btn-primary btn-sm"  href="song.php" >Add Song</a>
             <table class="table mt-4">
   <thead>
     <tr>

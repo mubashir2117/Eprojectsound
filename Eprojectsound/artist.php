@@ -17,7 +17,8 @@ $myPath= "images/".$imgName;
 
 move_uploaded_file($tempPath, $myPath);
  
-    $query = "INSERT INTO `artist`(`artist_name`, `artist_image`,`genre_id`) VALUES ('$artist_name','$myPath','$genre_id')";
+    $query = "INSERT INTO `artist`(`artist_name`, `artist_image`,`genre_id`) 
+    VALUES ('$artist_name','$myPath','$genre_id')";
 
     $result = mysqli_query($conn, $query);
 
@@ -39,6 +40,7 @@ move_uploaded_file($tempPath, $myPath);
                 <form action="" method="Post" enctype="multipart/form-data">
                     <h1>Add artist</h1>
                     <input type="text" class="p-1 border border-dark rounded" name="artist_name" required><br><br>
+                    <input type="file" class="p-1 border border-dark rounded" name="artist_image" required><br><br>
                     
                     <select name="genre" id="" class="form-control mt-2">
             <?php
@@ -52,9 +54,8 @@ move_uploaded_file($tempPath, $myPath);
                 }
             ?>
         </select><br><br>
-                    <input type="file" class="p-1 border border-dark rounded" name="artist_image" required><br><br>
 
-                    <button class="btn btn-outline-primary btn-sm" name="submit">Add</button>
+                    <button class="btn btn-outline-primary btn-sm mt-2" name="submit">Add</button>
                 </form>
             </div>
         </div>

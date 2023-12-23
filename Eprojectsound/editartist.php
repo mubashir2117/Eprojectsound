@@ -1,5 +1,3 @@
-
-
 <?php
 include "header.php";
 ?>
@@ -14,11 +12,12 @@ include "header.php";
     $genre_id = $_POST["genre_id"];
 
     
-    $query1 = "UPDATE `artist` SET `artist_name`='$artist_name',`artist_image`='$artist_image',`genre_id`='$genre_id' WHERE `Artist_id` = '$id'";
+    $query4 = "UPDATE `artist` SET `artist_name`='$artist_name',
+    `artist_image`='$artist_image',`genre_id`='$genre_id' WHERE `Artist_id` = '$id'";
 
-    $result1 = mysqli_query($conn, $query1);
+    $result4 = mysqli_query($conn, $query4);
 
-    if($result1){
+    if($result4){
        echo"update";
     }
     else{
@@ -39,12 +38,12 @@ include "header.php";
                     <?php
                     $query = "SELECT * FROM `artist` WHERE Artist_id = $id";
                     $result = mysqli_query($conn, $query);
-                    $rows = mysqli_fetch_assoc($result);
+                    $data = mysqli_fetch_assoc($result);
                     ?>
-        <input value="<?php echo $rows["Artist_id"]?>" type="hidden" name="id">
+        <input value="<?php echo $data["Artist_id"]?>" type="hidden" name="id">
 
-                    <input value="<?php echo $rows['artist_name']?>" type="text" name="artist_name"><br><br>
-                    <input value="<?php echo $rows['artist_image']?>" type="file" name="artist_image"><br><br>
+                    <input value="<?php echo $data['artist_name']?>" type="text" name="artist_name"><br><br>
+                    <input value="<?php echo $data['artist_image']?>" type="file" name="artist_image"><br><br>
                     <select name="genre_id" id="" class="form-control mt-2">
             <?php
               $qry= "select * from genre";

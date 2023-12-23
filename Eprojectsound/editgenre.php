@@ -4,16 +4,16 @@ include "header.php";
 ?>
 <?php
     include("config.php");
-    $id = $_GET['getid'];
+    $id = $_GET['id'];
 
    if(isset($_POST['submit'])){
     $id = $_POST["id"];
     $genre_name = $_POST["genre_name"];
     
-    $query = "UPDATE `genre` SET `genre_name`='$genre_name' WHERE id = $id";
-  $result = mysqli_query($conn, $query);
+    $query1 = "UPDATE `genre` SET `genre_name`='$genre_name' WHERE id = $id";
+  $result1 = mysqli_query($conn, $query1);
 
-    if($result){
+    if($result1){
        echo"update";
     }
     else{

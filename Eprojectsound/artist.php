@@ -1,15 +1,12 @@
-
-
 <?php
 include "header.php";
 ?>
 <?php
     include("config.php");
-   if(isset($_POST['submit'])){
-   
+   if(isset($_POST['submit'])){   
     $artist_name = $_POST["artist_name"];
-    $img=$_FILES["artist_image"];
     $genre_id = $_POST["genre"];
+    $img=$_FILES["artist_image"];
 
 $imgName = $img['name'];
 $tempPath = $img['tmp_name'];

@@ -174,12 +174,12 @@
         <div class="quixnav">
             <div class="quixnav-scroll">
                 <ul class="metismenu" id="menu">
-                    <li class="nav-label first">Main Menu</li>
+                    <li class="nav-label first text-white">Main Menu</li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
-                                class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a>
+                                class="icon icon-single-04"></i><span class="nav-text text-white">Dashboard</span></a>
                        
                     </li>
-                    <li class="nav-label">Edits</li>
+                    <li class="nav-label text-white">Edits</li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                                 class="icon icon-app-store"></i><span class="nav-text">Genre</span></a>
                         <ul aria-expanded="false">
@@ -188,18 +188,18 @@
                             <li><a href="genrelist.php">Genre List</a></li>
                         </ul>
                     </li>
-                    <li class="nav-label">Edit Artist</li>
+                    <li class="nav-label text-white">Edit Artist</li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
-                                class="icon icon-app-store"></i><span class="nav-text">Artist</span></a>
+                                class="icon icon-app-store"></i><span class="nav-text text-white">Artist</span></a>
                         <ul aria-expanded="false">
                             <li><a href="artist.php">Add Artist</a></li>
                            
                             <li><a href="artistlist.php">Artist List</a></li>
                         </ul>
                     </li>
-                    <li class="nav-label">Edit Song</li>
+                    <li class="nav-label text-white">Edit Song</li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
-                                class="icon icon-app-store"></i><span class="nav-text">Song</span></a>
+                                class="icon icon-app-store"></i><span class="nav-text text-white">Song</span></a>
                         <ul aria-expanded="false">
                             <li><a href="song.php">Add Song</a></li>
                            
@@ -207,7 +207,7 @@
                         </ul>
                     </li>
                     
-                    <li class="nav-label">Components</li>
+                    <li class="nav-label text-white">Components</li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                                 class="icon icon-world-2"></i><span class="nav-text">Bootstrap</span></a>
                         <ul aria-expanded="false">

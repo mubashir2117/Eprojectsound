@@ -5,8 +5,8 @@ include "header.php";
 
 <?php
 include ("config.php");
-$query = "SELECT * FROM `artist` inner join genre where genre.id = artist.genre_id";
-$result = mysqli_query($conn,$query);
+$query5 = "SELECT * FROM `artist` join genre WHERE genre.id = artist.genre_id";
+$result5 = mysqli_query($conn, $query5);
 
 ?>
 
@@ -42,17 +42,17 @@ $result = mysqli_query($conn,$query);
  </thead>
  <tbody>
     <?php
-    while($data = mysqli_fetch_assoc($result)){
+    while($data5 = mysqli_fetch_assoc($result5)){
    ?>
    <tr>
        
-       <td><?php echo $data["artist_name"]; ?></td>
-       <td> <img src="<?php echo $data["artist_image"]; ?>" alt="" width="250px" height="150px"></td>
-       <td><?php echo $data["genre_name"]; ?></td>
+       <td><?php echo $data5["artist_name"]; ?></td>
+       <td> <img src="<?php echo $data5["artist_image"]; ?>" alt="" width="250px" height="150px"></td>
+       <td><?php echo $data5["genre_name"]; ?></td>
 
    
-    <td><a class="btn btn-primary" href="editartist.php?getid=<?php echo $data['Artist_id']?>">Edit</a></td>
-    <td><a class="btn btn-danger" href="deleteartist.php?delid=<?php echo $data['Artist_id']?>">Delete</a></td>
+    <td><a class="btn btn-primary" href="editartist.php?getid=<?php echo $data5['Artist_id']?>">Edit</a></td>
+    <td><a class="btn btn-danger" href="deleteartist.php?delid=<?php echo $data5['Artist_id']?>">Delete</a></td>
    </tr>
   
 

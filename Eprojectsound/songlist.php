@@ -10,9 +10,7 @@ $qry1 = "SELECT * FROM `song` inner join artist where artist.Artist_id = song.Ar
 $result = mysqli_query($conn,$query);
 $res1 = mysqli_query($conn,$qry1);
 
-
 ?>
-
 
  <!DOCTYPE html>
  <html lang="en">
@@ -31,22 +29,21 @@ $res1 = mysqli_query($conn,$qry1);
     <div class="container-fluid">
 
         <div class="row">
-            <a class="btn btn-primary btn-sm"  href="song.php" >Add Song</a>
+            <a class="btn btn-primary mb-3 f-s-12"  href="song.php">Add Song</a>
             <table class="table mt-4">
   <thead>
     <tr>
         <th scope="col">song_name</th>
         <th scope="col">song_file</th>
         <th scope="col">song_image</th>
-
         <th scope="col">Genreid</th>
         <th scope="col">Artists_id</th> 
-
         <th scope="col">Edit</th>
         <th scope="col">Delete</th>
 
     </tr>
  </thead>
+ 
  <tbody>
     <?php
     while($data = mysqli_fetch_assoc($result)){

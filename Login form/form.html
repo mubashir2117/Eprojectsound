@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login Form</title>
+</head>
+<body>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to right, rgb(10, 2, 77), rgb(141, 2, 2));
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      width: 300px;
+      text-align: center;
+    }
+
+    .login-container h2 {
+      color: #2196F3;
+    }
+
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .login-form label {
+      color: #2196F3;
+      font-weight: bold;
+      text-align: left;
+    }
+
+    .login-form input {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #2196F3;
+      border-radius: 5px;
+      background: #fff;
+      color: #333;
+      outline: none;
+    }
+
+    .login-form button {
+      background: #2196F3;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .login-form button:hover {
+      background: #1565C0;
+    }
+
+    .login-form button:active {
+      background: #0D47A1;
+    }
+
+    
+  </style>
+</head>
+<body>
+
+<div class="login-container">
+  <h2>Login</h2>
+  <form class="login-form" id="loginForm">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+
+    <button type="submit">Login</button>
+    <p>Don't have an account? <a class="signup-link" onclick="toggleForm()">Sign Up</a></p>
+  </form>
+
+  <form class="login-form" id="signupForm" style="display: none;">
+    <label for="newUsername">New Username:</label>
+    <input type="text" id="newUsername" name="newUsername" required>
+
+    <label for="newPassword">New Password:</label>
+    <input type="password" id="newPassword" name="newPassword" required>
+
+    <button type="submit">Sign Up</button>
+    <p>Already have an account? <a class="signup-link" onclick="toggleForm()">Login</a></p>
+  </form>
+</div>
+
+<script>
+  function toggleForm() {
+    const loginForm = document.getElementById("loginForm");
+    const signupForm = document.getElementById("signupForm");
+
+    if (loginForm.style.display === "none") {
+      loginForm.style.display = "flex";
+      signupForm.style.display = "none";
+    } else {
+      loginForm.style.display = "none";
+      signupForm.style.display = "flex";
+    }
+  }
+</script>
+
+  
+</body>
+</html>
+
+  
+

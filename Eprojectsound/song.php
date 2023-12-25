@@ -1,5 +1,5 @@
 
-<?php
+<<?php
 include "header.php";
 ?>
 
@@ -20,8 +20,16 @@ $myPath= "images/".$imgName;
 
 move_uploaded_file($tempPath, $myPath);
  
+$img1=$_FILES["song_file"];
+print_r($_FILES["song_file"]);
+$imgName1 = $img1['name'];
+$tempPath1 = $img1['tmp_name'];
+$myPath1 = "audio/".$imgName1;
+
+move_uploaded_file($tempPath1, $myPath1);
+
     $query = "INSERT INTO `song`(`song_name`,`song_image`,`song_file`,`genre_id`,`Artists_id`) VALUES
-     ('$song_name','$myPath','$song_file','$genre_id','$Artists_id')";
+     ('$song_name','$myPath','$myPath1','$genre_id','$Artists_id')";
 
     $result = mysqli_query($conn, $query);
 

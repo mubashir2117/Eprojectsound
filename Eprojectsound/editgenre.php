@@ -39,8 +39,8 @@ include "header.php";
         <input value="<?php echo $rows["id"]?>" type="hidden" name="id">
 
                     <input value="<?php echo $rows['genre_name']?>" type="text" name="genre_name"><br><br>
-                    <button class="btn btn-outline-primary" name="submit">Edit</button>
-                    <a href="genrelist.php">Cancel</a>
+                    <button class="btn btn-outline-primary mt-2" name="submit">Edit</button>
+                    <a class="btn btn-primary mt-2 mx-2" href="genrelist.php">Cancel</a>
                 </form>
             </div>
         </div>

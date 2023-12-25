@@ -26,7 +26,7 @@ $result = mysqli_query($conn,$query);
     <div class="container-fluid">
 
         <div class="row">
-            <a class="btn btn-primary btn-lg form-control"  href="genre.php" >Add new</a>
+            <a class="btn btn-primary" href="genre.php" >Add Genre</a>
             <table class="table mt-4">
   <thead>
     <tr>
@@ -49,10 +49,7 @@ $result = mysqli_query($conn,$query);
     <td><a class="btn btn-primary" href="editgenre.php?id=<?php echo $data["id"];?> ">Edit</a></td>
     <td><a class="btn btn-danger" href="delete.php?id=<?php echo $data["id"];?>">Delete</a></td>
    </tr>
-  
-
-
-   <?php     
+    <?php     
 }
     ?>
 

@@ -29,7 +29,7 @@ $res1 = mysqli_query($conn,$qry1);
     <div class="container-fluid">
 
         <div class="row">
-            <a class="btn btn-primary mb-3 f-s-12"  href="song.php">Add Song</a>
+            <a class="btn btn-primary f-s-12"  href="song.php">Add Song</a>
             <table class="table mt-4">
   <thead>
     <tr>

@@ -28,7 +28,7 @@ $result5 = mysqli_query($conn, $query5);
     <div class="container-fluid">
 
         <div class="row">
-            <a class="btn btn-primary btn-sm"  href="artist.php" >Add new</a>
+            <a class="btn btn-primary"  href="artist.php" >Add new</a>
             <table class="table mt-4">
   <thead>
     <tr>

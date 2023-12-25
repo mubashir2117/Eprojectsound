@@ -65,8 +65,8 @@ include "header.php";
         </select>
                    
 
-                    <button class="btn btn-outline-primary" name="submit">Edit</button>
-                    <a href="artistlist.php">Cancel</a>
+                    <button class="btn btn-outline-primary mt-3" name="submit">Edit</button>
+                    <a class="btn btn-primary mt-3 mx-2" href="artistlist.php">Cancel</a>
                 </form>
             </div>
         </div>

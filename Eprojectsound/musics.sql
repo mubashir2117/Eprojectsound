@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+drop database musics;
+
+>>>>>>> 6c2ff3098762ecd567d6b603efc4f88385d7b2cc
 create database music;
 
 use music;
@@ -27,3 +32,22 @@ Artists_id int,
 FOREIGN KEY (genre_id) REFERENCES genre(id),
 FOREIGN KEY (Artists_id) REFERENCES artist(Artist_id)
 );
+<<<<<<< HEAD
+=======
+
+
+create table roles(
+	r_id int primary key auto_increment,
+    role_name varchar(50)
+);
+
+create table users(
+	user_id int primary key auto_increment,
+    user_name varchar(20),
+    user_email varchar(200),
+    user_password varchar(200),
+    user_address varchar(500),
+    role_id int,
+    foreign key (role_id) references roles(r_id)
+);
+>>>>>>> 6c2ff3098762ecd567d6b603efc4f88385d7b2cc

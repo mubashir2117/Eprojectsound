@@ -147,6 +147,7 @@
                                 <div class="dropdown-menu dropdown-menu-right">
                                     <a href="./app-profile.html" class="dropdown-item">
                                         <i class="icon-user"></i>
+                                        
                                         <span class="ml-2">Profile </span>
                                     </a>
                                     <a href="login.php" class="dropdown-item">
@@ -192,20 +193,14 @@
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                                 class="icon icon-app-store"></i><span class="nav-text text-white">Artist</span></a>
                         <ul aria-expanded="false">
-                            <li><a href="artist.php">Add Artist</a></li>
-                           
+                            <li><a href="artist.php">Add Artist</a></li>                           
                             <li><a href="artistlist.php">Artist List</a></li>
                         </ul>
                     </li>
-<<<<<<< HEAD
-                    <li class="nav-label">Edit Song</li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
-                                class="icon icon-app-store"></i><span class="nav-text">Song</span></a>
-=======
                     <li class="nav-label text-white">Edit Song</li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                                 class="icon icon-app-store"></i><span class="nav-text text-white">Song</span></a>
->>>>>>> 6c2ff3098762ecd567d6b603efc4f88385d7b2cc
+
                         <ul aria-expanded="false">
                             <li><a href="song.php">Add Song</a></li>
                            
@@ -213,11 +208,10 @@
                         </ul>
                     </li>
                     
-<<<<<<< HEAD
+
                     <li class="nav-label">Components</li>
-=======
-                    <li class="nav-label text-white">Components</li>
->>>>>>> 6c2ff3098762ecd567d6b603efc4f88385d7b2cc
+        <li class="nav-label text-white">Components</li>
+
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                                 class="icon icon-world-2"></i><span class="nav-text">Bootstrap</span></a>
                         <ul aria-expanded="false">

@@ -1,42 +1,34 @@
 <?php
-include("header.php");
+session_start();
+// include("header.php");
 ?>
 <?php
-session_start();
+
     include('config.php');
+
     if(isset($_POST['submit'])){
-      $useremail = $_POST['user_email'];
-      $userpassword = $_POST['user_password'];
 
-      $query7 = "SELECT * from users where user_email = '$useremail' AND user_password = '$userpassword'";
+    
+      $user_email = $_POST['user_email'];
+      $user_password = $_POST['user_password'];
 
-      $result7 = mysqli_query($conn, $query7);
-      $data7 = mysqli_fetch_array($result7);
-      if(mysqli_num_rows($result7) > 0){
-        $_SESSION['user_email'] = $data7['user_email'];
-        $_SESSION['user_password'] = $data7['user_password'];
-          echo "<script>location.href = 'index.php';</script>";
+      $query = "SELECT * from users where user_email = '$user_email' AND user_password = '$user_password'";
+
+      $result = mysqli_query($conn, $query);
+      $data = mysqli_fetch_array($result);
+      if(mysqli_num_rows($result) > 0){
+        $_SESSION['user_id'] = $data['user_id'];
+        $_SESSION['user_name'] = $data['user_name'];
+        echo "<script>location.href = 'index.php';</script>";
       }
       else{
-          
+          echo "<div class='alert alert-danger w-75 mt-5 mx-auto' role='alert'>
+          Username or password is incorrect
+        </div>";
       }
+    }
     
- 
 
-  if(isset($_SESSION['user_email'])){
-    echo "<script>location.href = 'index.php';</script>";
-  
-  }
-  else{
-  }
-  
-  if(isset($_SESSION['user_password'])){
-    echo "<script>location.href = 'index.php';</script>";
-  
-  }
-  else{
-  }
-  
 ?>
 
 <!DOCTYPE html>
@@ -70,10 +62,6 @@ session_start();
 
 <?php
     
-    include("footer.php");
+    // include("footer.php");
 
-?>
-
-<?php
-}
 ?>

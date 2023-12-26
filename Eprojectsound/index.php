@@ -1,6 +1,13 @@
 
 <?php
-include "header.php";
+session_start();
+
+if($_SESSION['user_id']){
+    
+
+    include("config.php");  
+    include "header.php";
+
 ?>
 
 <!DOCTYPE html>
@@ -596,4 +603,8 @@ include "header.php";
 
 <?php
 include "footer.php";
+}
+else{
+    echo "<script>window.location.href = 'login.php';</script>";
+  }
 ?>

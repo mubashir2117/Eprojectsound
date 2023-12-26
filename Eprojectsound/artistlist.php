@@ -5,13 +5,10 @@ include "header.php";
 
 <?php
 include ("config.php");
-<<<<<<< HEAD
-$query = "SELECT * FROM `artist` inner join genre where genre.id = artist.genre_id";
-$result = mysqli_query($conn,$query);
-=======
-$query5 = "SELECT * FROM `artist` join genre WHERE genre.id = artist.genre_id";
-$result5 = mysqli_query($conn, $query5);
->>>>>>> 6c2ff3098762ecd567d6b603efc4f88385d7b2cc
+
+$query10 = "SELECT * FROM `artist` inner join genre where genre.id = artist.genre_id";
+$result10 = mysqli_query($conn,$query10);
+
 
 ?>
 
@@ -47,38 +44,25 @@ $result5 = mysqli_query($conn, $query5);
  </thead>
  <tbody>
     <?php
-<<<<<<< HEAD
-    while($data = mysqli_fetch_assoc($result)){
+
+    while($data10 = mysqli_fetch_assoc($result10)){
    ?>
    <tr>
        
-       <td><?php echo $data["artist_name"]; ?></td>
-       <td> <img src="<?php echo $data["artist_image"]; ?>" alt="" width="250px" height="150px"></td>
-       <td><?php echo $data["genre_name"]; ?></td>
+       <td><?php echo $data10["artist_name"]; ?></td>
+       <td> <img src="<?php echo $data10["artist_image"]; ?>" alt="" width="250px" height="150px"></td>
+       <td><?php echo $data10["genre_name"]; ?></td>
 
    
-    <td><a class="btn btn-primary" href="editartist.php?getid=<?php echo $data['Artist_id']?>">Edit</a></td>
-    <td><a class="btn btn-danger" href="deleteartist.php?delid=<?php echo $data['Artist_id']?>">Delete</a></td>
-=======
-    while($data5 = mysqli_fetch_assoc($result5)){
-   ?>
-   <tr>
-       
-       <td><?php echo $data5["artist_name"]; ?></td>
-       <td> <img src="<?php echo $data5["artist_image"]; ?>" alt="" width="250px" height="150px"></td>
-       <td><?php echo $data5["genre_name"]; ?></td>
-
-   
-    <td><a class="btn btn-primary" href="editartist.php?getid=<?php echo $data5['Artist_id']?>">Edit</a></td>
-    <td><a class="btn btn-danger" href="deleteartist.php?delid=<?php echo $data5['Artist_id']?>">Delete</a></td>
->>>>>>> 6c2ff3098762ecd567d6b603efc4f88385d7b2cc
-   </tr>
-  
-
-
+    <td><a class="btn btn-primary" href="editartist.php?getid=<?php echo $data10['Artist_id']?>">Edit</a></td>
+    <td><a class="btn btn-danger" href="deleteartist.php?delid=<?php echo $data10['Artist_id']?>">Delete</a></td>
+    
    <?php     
 }
     ?>
+
+
+
 
  </tbody>
  </table>

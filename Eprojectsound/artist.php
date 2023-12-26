@@ -1,15 +1,16 @@
-
-
 <?php
 include "header.php";
 ?>
 <?php
     include("config.php");
-   if(isset($_POST['submit'])){
-   
+   if(isset($_POST['submit'])){   
     $artist_name = $_POST["artist_name"];
+
     $img=$_FILES["artist_image"];
     $genre_id = $_POST["genre"];
+
+    $genre_id = $_POST["genre"];
+    $img=$_FILES["artist_image"];
 
 $imgName = $img['name'];
 $tempPath = $img['tmp_name'];
@@ -38,7 +39,8 @@ move_uploaded_file($tempPath, $myPath);
             <div class="col-lg-12">
                 <form action="" method="Post" enctype="multipart/form-data">
                     <h1>Add artist</h1>
-                    <input type="text" class="p-1 border border-dark rounded" name="artist_name" required><br><br>
+                    <input type="text" class="p-1 border border-dark rounded" name="artist_name" required><br><br>         
+                    <input type="file" class="p-1 border border-dark rounded" name="artist_image" required><br><br>
                     
                     <select name="genre" id="" class="form-control mt-2">
             <?php
@@ -52,9 +54,8 @@ move_uploaded_file($tempPath, $myPath);
                 }
             ?>
         </select><br><br>
-                    <input type="file" class="p-1 border border-dark rounded" name="artist_image" required><br><br>
 
-                    <button class="btn btn-outline-primary btn-sm" name="submit">Add</button>
+                    <button class="btn btn-outline-primary btn-sm mt-2" name="submit">Add</button>
                 </form>
             </div>
         </div>

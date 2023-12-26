@@ -5,8 +5,10 @@ include "header.php";
 
 <?php
 include ("config.php");
-$query = "SELECT * FROM `artist` inner join genre where genre.id = artist.genre_id";
-$result = mysqli_query($conn,$query);
+
+$query10 = "SELECT * FROM `artist` inner join genre where genre.id = artist.genre_id";
+$result10 = mysqli_query($conn,$query10);
+
 
 ?>
 
@@ -28,7 +30,7 @@ $result = mysqli_query($conn,$query);
     <div class="container-fluid">
 
         <div class="row">
-            <a class="btn btn-primary btn-lg form-control"  href="artist.php" >Add new</a>
+            <a class="btn btn-primary"  href="artist.php" >Add new</a>
             <table class="table mt-4">
   <thead>
     <tr>
@@ -42,24 +44,25 @@ $result = mysqli_query($conn,$query);
  </thead>
  <tbody>
     <?php
-    while($data = mysqli_fetch_assoc($result)){
+
+    while($data10 = mysqli_fetch_assoc($result10)){
    ?>
    <tr>
        
-       <td><?php echo $data["artist_name"]; ?></td>
-       <td> <img src="<?php echo $data["artist_image"]; ?>" alt="" width="250px" height="150px"></td>
-       <td><?php echo $data["genre_name"]; ?></td>
+       <td><?php echo $data10["artist_name"]; ?></td>
+       <td> <img src="<?php echo $data10["artist_image"]; ?>" alt="" width="250px" height="150px"></td>
+       <td><?php echo $data10["genre_name"]; ?></td>
 
    
-    <td><a class="btn btn-primary" href="editartist.php?getid=<?php echo $data['Artist_id']?>">Edit</a></td>
-    <td><a class="btn btn-danger" href="deleteartist.php?delid=<?php echo $data['Artist_id']?>">Delete</a></td>
-   </tr>
-  
-
-
+    <td><a class="btn btn-primary" href="editartist.php?getid=<?php echo $data10['Artist_id']?>">Edit</a></td>
+    <td><a class="btn btn-danger" href="deleteartist.php?delid=<?php echo $data10['Artist_id']?>">Delete</a></td>
+    
    <?php     
 }
     ?>
+
+
+
 
  </tbody>
  </table>

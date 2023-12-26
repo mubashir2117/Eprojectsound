@@ -26,7 +26,7 @@ $result = mysqli_query($conn,$query);
     <div class="container-fluid">
 
         <div class="row">
-            <a class="btn btn-primary btn-lg form-control"  href="genre.php" >Add new</a>
+            <a class="btn btn-primary" href="genre.php" >Add Genre</a>
             <table class="table mt-4">
   <thead>
     <tr>
@@ -49,10 +49,7 @@ $result = mysqli_query($conn,$query);
     <td><a class="btn btn-primary" href="editgenre.php?id=<?php echo $data["id"];?> ">Edit</a></td>
     <td><a class="btn btn-danger" href="delete.php?id=<?php echo $data["id"];?>">Delete</a></td>
    </tr>
-  
-
-
-   <?php     
+    <?php     
 }
     ?>
 
@@ -68,32 +65,3 @@ $result = mysqli_query($conn,$query);
 include "footer.php";
 ?>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>

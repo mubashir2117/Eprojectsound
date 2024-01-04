@@ -1,13 +1,12 @@
 <?php
-include "header.php";
+include 'header.php';
+
 ?>
 
 <?php
 include ("config.php");
-$query = "SELECT * FROM `song` inner join genre where genre.id = song.genre_id";
-$qry1 = "SELECT * FROM `song` inner join artist where artist.Artist_id = song.Artists_id";
 
-$result = mysqli_query($conn,$query);
+$qry1 = "SELECT * FROM `song` join genre on genre.id = song.genre_id join artist on artist.Artist_id = song.Artists_id";
 $res1 = mysqli_query($conn,$qry1);
 
 ?>
@@ -27,15 +26,14 @@ $res1 = mysqli_query($conn,$qry1);
  <body>
  <div class="content-body">
     <div class="container-fluid">
-
         <div class="row">
             <a class="btn btn-primary f-s-12"  href="song.php">Add Song</a>
             <table class="table mt-4">
   <thead>
     <tr>
         <th scope="col">song_name</th>
-        <th scope="col">song_file</th>
         <th scope="col">song_image</th>
+        <th scope="col">song_file</th>
         <th scope="col">Genreid</th>
         <th scope="col">Artists_id</th> 
         <th scope="col">Edit</th>
@@ -43,37 +41,27 @@ $res1 = mysqli_query($conn,$qry1);
 
     </tr>
  </thead>
- 
  <tbody>
     <?php
-    while($data = mysqli_fetch_assoc($result)){
-   ?>
-   <tr>
-       
-       <td><?php echo $data["song_name"]; ?></td>
-       <td> <img src="<?php echo $data["song_file"]; ?>" alt="" width="150px" height="100px"></td>
-       <td> <img src="<?php echo $data["song_image"]; ?>" alt="" width="150px" height="150px"></td>
-
-       <td><?php echo $data["genre_name"]; ?></td>
-       <?php
     while($data1 = mysqli_fetch_assoc($res1)){
    ?>
-       <td><?php echo $data1["artist_name"]; ?></td>
-
-
-   
-    <td><a class="btn btn-primary" href="editsong.php?editsid=<?php echo $data['song_id']?>">Edit</a></td>
-    <td><a class="btn btn-danger" href="deletesong.php?delsid=<?php echo $data['song_id']?>">Delete</a></td>
+   <tr>       
+       <td><?php echo $data1["song_name"]; ?></td>
+       <td> <img src="<?php echo $data1["song_image"]; ?>" alt="" width="100px" height="100px"></td>
+       <td> <audio controls>
+  <source src="<?php echo $data1["song_file"]; ?>" width="100px" height="100px" type="audio/ogg">
+</audio>
+</td>
+       <td><?php echo $data1["genre_name"]; ?></td>
+       <td><?php echo $data1["artist_name"]; ?></td> 
+    <td><a class="btn btn-primary" href="editsong.php?editsid=<?php echo $data1['song_id']?>">Edit</a></td>
+    <td><a class="btn btn-danger" href="deletesong.php?delsid=<?php echo $data1['song_id']?>">Delete</a></td>
    </tr>
-
-
-   <?php     
+  <?php     
 }
     ?>
 
-<?php     
-}
-    ?>
+
  </tbody>
  </table>
  </body>

@@ -8,8 +8,6 @@ include ("config.php");
 
 $query10 = "SELECT * FROM `artist` inner join genre where genre.id = artist.genre_id";
 $result10 = mysqli_query($conn,$query10);
-
-
 ?>
 
 

@@ -1,4 +1,3 @@
-
 <?php
 include "header.php";
 ?>
@@ -9,15 +8,25 @@ include "header.php";
    if(isset($_POST['submit'])){
     // $id = $_POST["id"];
     $song_name = $_POST["song_name"];
-    $song_image = $_POST["song_image"];
-    $song_file = $_POST["song_file"];
-
+    
     $genre_id = $_POST["genre_id"];
     $Artist_id = $_POST["Artists_id"];
-
-
     
-    $query1 = "UPDATE `song` SET `song_name`='$song_name',`song_image`='$song_image',`song_file`='$song_file',
+    $img=$_FILES["song_image"];
+    $imgName = $img['name'];
+    $tempPath = $img['tmp_name'];
+    $myPath3= "images/".$imgName;
+    
+    move_uploaded_file($tempPath, $myPath3);
+    
+    $audio = $_FILES["song_file"];
+    $audioName = $audio['name'];
+    $tempPath = $audio['tmp_name'];
+    $myPath4= "audio/".$audioName;
+    
+    move_uploaded_file($tempPath, $myPath4);
+
+    $query1 = "UPDATE `song` SET `song_name`='$song_name',`song_image`='$myPath3',`song_file`='$myPath4',
     `genre_id`='$genre_id',`Artists_id`='$Artist_id' WHERE `song_id` = '$id'";
 
     $result1 = mysqli_query($conn, $query1);
@@ -38,7 +47,7 @@ include "header.php";
 
         <div class="row">
             <div class="col-lg-12">
-                <form action="" method="Post">
+                <form action="" method="Post" enctype="multipart/form-data">
                     <h1>Edit Song</h1>
                     <?php
                     $query = "SELECT * FROM `song` WHERE song_id = $id";

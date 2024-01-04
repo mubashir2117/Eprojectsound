@@ -1,32 +1,43 @@
 
-
 <?php
 include "header.php";
 ?>
-
 <?php
     include("config.php");
    if(isset($_POST['submit'])){
    
     $song_name = $_POST["song_name"];
-    $song_file = $_FILES["song_file"];
     $genre_id = $_POST["genre"];
     $Artists_id = $_POST["artist"];
+
     
+    $img=$_FILES["song_image"];
+    $imgName= $img['name'];
+    $tempPath = $img['tmp_name'];
+    $myPath= "images/".$imgName;
+    
+    move_uploaded_file($tempPath, $myPath);
+    
+    
+    $audio = $_FILES["song_file"];
+    $audioName = $audio['name'];
+    $tempAudioPath = $audio['tmp_name'];
+    $audioPath = "audio/".$audioName;
+// $allowedAudioTypes = array("audio/mp3", "audio/wav");
+    // if (in_array($_FILES["song_file"]["type"], $allowedAudioTypes)) {
+        move_uploaded_file($tempAudioPath, $audioPath);
 
-$img1=$_FILES["song_image"];
-$imgName1 = $img1['name'];
-$tempPath1 = $img1['tmp_name'];
-$myPath1 = "images/".$imgName1;
 
-move_uploaded_file($tempPath1, $myPath1);
 
-    $query = "INSERT INTO `song`(`song_name`,`song_image`,`song_file`,`genre_id`,`Artists_id`) VALUES
-     ('$song_name','$myPath','$myPath1','$genre_id','$Artists_id')";
+    $query9 = "INSERT INTO `song`(`song_name`,`song_image`,`song_file`,`genre_id`,`Artists_id`) VALUES
+     ('$song_name','$myPath','$audioPath','$genre_id','$Artists_id')";
+$result9 = mysqli_query($conn, $query9);
 
-    $result = mysqli_query($conn, $query);
+$qry11= "select * from song";
+$res11= mysqli_query($conn, $qry11);
 
-    if($res1){
+
+    if($result9){
         echo "Record inserted";
         header("Location: songlist.php");
 
@@ -35,6 +46,7 @@ move_uploaded_file($tempPath1, $myPath1);
         echo "Error";
     }
 }
+
 ?>
 
 <div class="content-body">
@@ -46,7 +58,7 @@ move_uploaded_file($tempPath1, $myPath1);
 
                     <h1>Add Song</h1>
                     <input type="text" class="p-1 border border-dark rounded" name="song_name" required><br><br>
-                    <input type="File" class="p-1 border border-dark rounded" name="song_image" required><br><br>
+                    <input type="file" class="p-1 border border-dark rounded" name="song_image" required><br><br>
                     <input type="file" class="p-1 border border-dark rounded" name="song_file" required><br><br>
                     
                     <select name="genre" id="" class="form-control mt-2">
@@ -74,9 +86,8 @@ move_uploaded_file($tempPath1, $myPath1);
                 }
             ?>
         </select><br><br>
-
-
-                    <button class="btn btn-outline-primary btn-sm" name="submit">Add</button>
+                    <button class="btn btn-outline-primary  btn-lg" name="submit">Add Song</button>
+                  
                 </form>
             </div>
         </div>
@@ -85,6 +96,9 @@ move_uploaded_file($tempPath1, $myPath1);
 
 
 
+
+
+ 
 <?php
 include 'footer.php';
             

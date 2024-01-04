@@ -5,10 +5,6 @@ include "header.php";
     include("config.php");
    if(isset($_POST['submit'])){   
     $artist_name = $_POST["artist_name"];
-
-    $img=$_FILES["artist_image"];
-    $genre_id = $_POST["genre"];
-
     $genre_id = $_POST["genre"];
     $img=$_FILES["artist_image"];
 
@@ -18,7 +14,8 @@ $myPath= "images/".$imgName;
 
 move_uploaded_file($tempPath, $myPath);
  
-    $query = "INSERT INTO `artist`(`artist_name`, `artist_image`,`genre_id`) VALUES ('$artist_name','$myPath','$genre_id')";
+    $query = "INSERT INTO `artist`(`artist_name`, `artist_image`,`genre_id`) VALUES 
+    ('$artist_name','$myPath','$genre_id')";
 
     $result = mysqli_query($conn, $query);
 
